@@ -67,7 +67,7 @@ public:
         else if (greekCount > englishCount) mainScript = "Greek";
         else if (arabicCount > englishCount) mainScript = "Arabic";
         
-        cout << "📝 Main Script Detected: " << mainScript << endl;
+        cout << "Main Script Detected: " << mainScript << endl;
         
         bool hasSuspiciousUnicode = false;
         for (size_t i = 0; i < wideText.length(); i++) {
@@ -78,10 +78,10 @@ public:
         }
         
         if (hasSuspiciousUnicode) {
-            cout << "🚨 SUSPICIOUS UNICODE CHARACTERS DETECTED!\n";
+            cout << " SUSPICIOUS UNICODE CHARACTERS DETECTED!\n";
             cout << "   This may be a homograph attack using characters that look like English letters.\n";
         } else {
-            cout << "✅ No suspicious Unicode characters detected.\n";
+            cout << " No suspicious Unicode characters detected.\n";
         }
         cout << "===================================\n";
     }
