@@ -45,7 +45,7 @@ void showResult(string a, string b, int distance, double similarity) {
     cout << "Edit Distance: " << distance << endl;
     cout << "Similarity: " << similarity << "%" << endl;
 
-    if (similarity > 85)
+    if (similarity > 85 && similarity!=100)
         cout << "Warning: Domains look very similar. Possible phishing attempt!\n";
     else
         cout << "Domains seem different and safe.\n";
