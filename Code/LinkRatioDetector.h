@@ -62,15 +62,15 @@ public:
         cout << "   - Link-to-word ratio: " << (linkRatio * 100) << "%\n";
         
         if (linkCount > maxLinks) {
-            cout << "🚨 TOO MANY LINKS DETECTED! Found " << linkCount << " links\n";
+            cout << " TOO MANY LINKS DETECTED! Found " << linkCount << " links\n";
         } else {
-            cout << "✅ Link count is within acceptable limits.\n";
+            cout << "Link count is within acceptable limits.\n";
         }
         
         if (linkRatio > suspiciousRatio) {
-            cout << "🚨 HIGH LINK DENSITY DETECTED! " << (linkRatio * 100) << "% is links\n";
+            cout << "HIGH LINK DENSITY DETECTED! " << (linkRatio * 100) << "% is links\n";
         } else {
-            cout << "✅ Link density is within normal range.\n";
+            cout << "Link density is within normal range.\n";
         }
         cout << "===============================\n";
     }
