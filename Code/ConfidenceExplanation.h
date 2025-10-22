@@ -51,11 +51,11 @@ public:
         for (int i = 0; i < flagCount; i++) {
             if (flags[i]) {
                 anyIssues = true;
-                cout << "⚠️  " << getExplanation(flagNames[i]) << endl;
+                cout  << getExplanation(flagNames[i]) << endl;
             }
         }
         if (!anyIssues) {
-            cout << "✅ No security issues detected. This message appears safe.\n";
+            cout << " No security issues detected. This message appears safe.\n";
         }
         cout << "============================\n";
     }
