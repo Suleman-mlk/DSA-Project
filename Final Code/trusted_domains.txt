@@ -1,0 +1,11 @@
+amazon.com
+aple.com
+facebook.com
+google.com
+instagram.com
+microsoft.com
+netflix.com
+paypal.com
+twitter.com
+whatsapp.com
+yahoo.com

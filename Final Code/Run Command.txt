@@ -1,0 +1,12 @@
+g++ -std=c++17 main.cpp Aho_Corasick.cpp SentimentAndUrgency.cpp  SuspiciousFileTypes.cpp url_heuristic.cpp spoof_analysis.cpp domain_similarity.cpp spoof_utils.cpp -o phishguard                               
+./phishguard
+
+CASES:
+paypal.com
+http://192.168.1.5/login.php
+
+facebook.com
+facabook.com
+
+facebook.com
+http://faceb00k.secure-account-login.net
