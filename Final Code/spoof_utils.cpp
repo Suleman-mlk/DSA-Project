@@ -1,43 +1,51 @@
 #include "spoof_utils.h"
 
-// Function to replace look-alike characters using a hash map
 string normalizeDomain(string domain) {
-    unordered_map<string, string> lookalikes = {
-        {"rn", "m"},
-        {"vv", "w"},
-        {"0", "o"},
-        {"1", "l"},
-        {"3", "e"},
-        {"@", "a"},
-        {"$", "s"}
-    };
-
-    string result;
+    string result = "";
     for (int i = 0; i < domain.length(); i++) {
-        // check for 2-letter lookalike first
         if (i < domain.length() - 1) {
             string two = domain.substr(i, 2);
-            if (lookalikes.find(two) != lookalikes.end()) {
-                result += lookalikes[two];
-                i++; // skip next character
+            if (two == "rn") {
+                result += 'm';
+                i++;
+                continue;
+            }
+            else if (two == "vv") {
+                result += 'w';
+                i++;
                 continue;
             }
         }
-
-        string one(1, domain[i]);
-        if (lookalikes.find(one) != lookalikes.end())
-            result += lookalikes[one];
-        else
-            result += domain[i];
+        char c = domain[i];
+        if (c == '0') {
+            result += 'o';
+        }
+        else if (c == '1') {
+            result += 'l';
+        }
+        else if (c == '3') {
+            result += 'e';
+        }
+        else if (c == '@') {
+            result += 'a';
+        }
+        else if (c == '$') {
+            result += 's';
+        }
+        else {
+            result += c;
+        }
     }
-
     return result;
 }
 
-// Function to compare domains and find similarity %
 float compareDomains(const string &d1, const string &d2) {
     int matches = 0;
+    
+    if (d1.empty() && d2.empty()) return 100.0f;
+    
     int maxLen = max(d1.length(), d2.length());
+    if (maxLen == 0) return 0.0f;
 
     for (int i = 0; i < min(d1.length(), d2.length()); i++) {
         if (d1[i] == d2[i]) matches++;
