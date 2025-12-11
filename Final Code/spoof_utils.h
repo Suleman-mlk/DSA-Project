@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include <unordered_map>
 using namespace std;
 
 // Replaces look-alike letters with their real versions
